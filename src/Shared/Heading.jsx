@@ -8,4 +8,4 @@ const Heading = ({ title, subtitle, center }) => {
     )
   }
   
-  export default Heading
+  export default Heading 
