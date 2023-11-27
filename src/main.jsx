@@ -6,6 +6,7 @@ import Home from './Components/Home/Home.jsx'
 import SignUp from './UserAuthentication/SignUp.jsx'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import ErrorPage from './ErrorPage.jsx'
+import AuthProvider from './Provider/AuthProvider.jsx'
 
 
 
@@ -29,6 +30,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AuthProvider>
    <RouterProvider router={router}></RouterProvider>
+   </AuthProvider>
   </React.StrictMode>,
 )

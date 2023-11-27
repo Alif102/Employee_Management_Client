@@ -1,4 +1,4 @@
-import axiosSecure from "./index"
+import axios from "axios"
 
 export const saveUser = async (user) => {
     const currentUser = {
@@ -6,7 +6,7 @@ export const saveUser = async (user) => {
       role: 'guest',
       status: 'Verified',
     }
-    const { data } = await axiosSecure.put(`/users/${user?.email}`, currentUser)
-  
+    // const { data } = await axiosSecure.put(`/users/${user?.email}`, currentUser)
+       const {data} = await axios.put(`http://localhost:5000/users/${user?.email}`,currentUser)
     return data
   }
