@@ -7,7 +7,30 @@ import { saveUser } from '../api/Auth'
 
 const SignUp = () => {
   const { createUser, handleUpdateProfile, loading } = UseAuth()
-  
+  const handleSubmit = async event => {
+    event.preventDefault()
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const image = form.image.files[0]
+    console.log(name,email,password)
+
+    try {
+      const imageData = await imageUpload(image); 
+      const result = await createUser(email,password)
+
+      await handleUpdateProfile(name, imageData?.data?.display_url)
+      console.log(result)
+
+      const dbresponse = await saveUser(result?.user)
+      console.log(dbresponse)
+
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <div className='flex justify-center items-center min-h-screen'>
