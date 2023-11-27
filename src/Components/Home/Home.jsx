@@ -1,5 +1,7 @@
 // import Banner from "./Banner"
- import Testimonial from "./Testimonial"
+//  import Testimonial from "./Testimonial"
+
+import Navbar from "../Navbar/Navbar"
 
 // import Categories from "../OurWork/Categories/Categories"
 // import Work from "../OurWork/Work"
@@ -9,9 +11,10 @@ const Home = () => {
   return (
     <div>
       <h1>home</h1>
+      <Navbar/>
       {/* <Banner/> */}
       {/* <About></About> */}
-      <Testimonial/>
+      {/* <Testimonial/> */}
       {/* <Categories/>
       <Work/> */}
     </div>

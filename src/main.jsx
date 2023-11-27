@@ -7,6 +7,8 @@ import SignUp from './UserAuthentication/SignUp.jsx'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import ErrorPage from './ErrorPage.jsx'
 import AuthProvider from './Provider/AuthProvider.jsx'
+import Register from './Components/Register/Register.jsx'
+import Login from './Components/Login/Login.jsx'
 
 
 
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
         path: '/signup',
         element: <SignUp/>
       },
+      {
+        path: 'register',
+        element: <Register/>
+      },
+      {
+        path: '/login',
+        element: <Login/>
+      }
     ]
  } ])
 
