@@ -9,6 +9,7 @@ import ErrorPage from './ErrorPage.jsx'
 import AuthProvider from './Provider/AuthProvider.jsx'
 import Register from './Components/Register/Register.jsx'
 import Login from './Components/Login/Login.jsx'
+import EmployeeUser from './Employee/EmployeeUser.jsx'
 
 
 
@@ -34,9 +35,15 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login/>
-      }
+      },
+      {
+        path: '/employee-list',
+        element: <EmployeeUser/>
+       }
     ]
- } ])
+ }
+ 
+ ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

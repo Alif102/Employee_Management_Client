@@ -1,0 +1,23 @@
+
+     [
+      {
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "verified": true,
+        "bankAccount": "1234567890",
+        "salary": 50000,
+        "pay": "Monthly",
+        "details": "Some additional details about John Doe"
+      },
+      {
+        "name": "Jane Smith",
+        "email": "jane.smith@example.com",
+        "verified": false,
+        "bankAccount": "9876543210",
+        "salary": 60000,
+        "pay": "Bi-weekly",
+        "details": "Some additional details about Jane Smith"
+      }
+    ]
+  
+  

@@ -3,6 +3,8 @@ import axios from "axios"
 export const saveUser = async (user) => {
     const currentUser = {
       email: user.email, 
+      photo : user.photoURL,
+      name : user.displayName,
       designation : user.designation,
       salary : user.salary,
       bank : user.bank,

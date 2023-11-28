@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import SocialLogin from "./SocialLogin";
-import { saveUser } from "../../api/Auth";
+// import { saveUser } from "../../api/Auth";
 import { imageUpload } from "../../api/utils";
 import UseAuth from "../../Hooks/UseAuth";
 
@@ -18,16 +18,40 @@ const Register = () => {
     e.preventDefault();
     const form = new FormData(e.currentTarget)
     const name = (form.get('name'));
+    const role = (form.get('role'));
+
     const email = (form.get('email'));
     const designation = (form.get('designation'));
     const salary = (form.get('salary'));
     const bank = (form.get('bank'));
-    const photo = (form.get('photo'));
     const password = (form.get('password'))
-    console.log(name, email, photo, password, designation,salary, bank)
     const Imageform = e.target;
 
     const image = Imageform.image.files[0]
+    const imageData = await imageUpload(image); 
+    const photo = imageData?.data?.display_url
+const UserData = {role,name, email, password, designation,salary, bank,photo}
+console.log(UserData)
+const VerifiedUser ={
+  isVerified : "hello"
+}
+    fetch('http://localhost:5000/users', {
+      method: 'POST',
+      headers:{
+        'content-type': 'application/json'
+      }, 
+      body : 
+        JSON.stringify(UserData, VerifiedUser )
+      
+    })
+
+    
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+    })
+
+  
 
 
     
@@ -50,13 +74,12 @@ const Register = () => {
 
     
 
-    const imageData = await imageUpload(image); 
-    const result = await createUser(email,password)
+     await createUser(email,password)
 
     
 
-    const dbresponse = await saveUser(result?.user)
-    console.log(dbresponse)
+    // const dbresponse = await saveUser(result?.user)
+    // console.log(dbresponse)
   
 
       handleUpdateProfile(name, imageData?.data?.display_url)
@@ -90,7 +113,12 @@ const Register = () => {
       }
       <form onSubmit={handleRegister}
        className="card-body md:w-3/4 lg:w-1/2 mx-auto ">
-
+<div className="form-control">
+          <label className="label">
+            <span className="label-text">Your Role :</span>
+          </label>
+          <input type="text" placeholder="Your Role" name="role" className="input input-bordered" />
+        </div>
 <div className="form-control">
           <label className="label">
             <span className="label-text">Name</span>
