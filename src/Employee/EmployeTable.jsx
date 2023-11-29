@@ -1,8 +1,18 @@
 /* eslint-disable react/prop-types */
 
 import { useState } from "react";
+import ToggleBtn from "../Shared/ToggleBtn";
 
 const EmployeTable = ({employees}) => {
+  const [toggle, setToggle] = useState(false)
+  console.log(toggle)
+  // const [isActive, setActive] = useState(false)
+
+  //   For verified/not verified menu item toggle button
+  const toggleHandler = event => {
+    setToggle(event.target.checked)
+  }
+  
     // const {name, email, designation,salary, bank,photo}= employee
     console.log(employees)
     const [isToggleOn, setToggleOn] = useState("❌");
@@ -74,6 +84,9 @@ const EmployeTable = ({employees}) => {
 
                 
              
+            </td>
+            <td>
+            <ToggleBtn toggleHandler={toggleHandler} />
             </td>
 </tr>
 

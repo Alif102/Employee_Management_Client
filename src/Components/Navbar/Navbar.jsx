@@ -40,9 +40,10 @@ const Navbar = () => {
     <li><NavLink to="/">Home</NavLink></li>
     {/* <li><NavLink to="/update">Update Product</NavLink></li> */}
 
-    {/* <li><NavLink to="/showProduct">Show Product</NavLink></li> */}
 
-    <li><NavLink to='/bookings'>My Bookings</NavLink></li>
+    <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
+    <li><NavLink to="/contact-us">Contact Us</NavLink></li> 
+
     </>
   return (
     <div data-theme="dark">
