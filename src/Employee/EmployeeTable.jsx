@@ -2,12 +2,10 @@
 // import  { useState } from 'react';
 
 import { useState } from "react";
-import useRole from "../Hooks/useRole";
 
 
 const EmployeeTable = ({ employees }) => {
-  const [role] = useRole();
-  console.log( 'role',role)
+  
     
   console.log(employees)
   
@@ -21,7 +19,7 @@ const EmployeeTable = ({ employees }) => {
 
   return (
     <div>
-       {      role === "employee" && 
+  
     <table>
       <thead>
         <tr>
@@ -62,7 +60,7 @@ const EmployeeTable = ({ employees }) => {
         ))}
       </tbody>
       
-    </table> }
+    </table> 
     
     
     </div>

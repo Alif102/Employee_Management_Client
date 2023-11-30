@@ -13,6 +13,7 @@ import ContactUs from './Components/ContactUs.jsx'
 import Dashboard from './Dashboard/Dashboard.jsx'
 import Worksheet from './Dashboard/EmployeeRoute/Worksheet.jsx'
 import PrivateRoute from './PrivateRoute/PrivateRoute.jsx'
+import AllUsers from './Dashboard/Admin/AllUsers.jsx'
 
 
 
@@ -58,6 +59,12 @@ const router = createBrowserRouter([
                   path: 'dashboard/my-wroksheet',
                   element:<PrivateRoute>
                      <Worksheet/>
+                  </PrivateRoute>
+                 },
+                 {
+                  path: 'dashboard/all-hr-employee-list',
+                  element: <PrivateRoute>
+                    <AllUsers/>
                   </PrivateRoute>
                  }
       

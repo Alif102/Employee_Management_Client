@@ -8,7 +8,7 @@ const Categories = () => {
     console.log(category)
      
   return (
-    <div className="">
+    <div className="mt-10 mb-3">
       <h1 className="text-xl text-center">Our Works</h1>
       <h1 className=" text-3xl text-center font-bold">RESULTS REVEAL THE- BEAUTY OF CREATIVITY.</h1>
       {/* <h1>CHOOSE CATEGORY:</h1> */}

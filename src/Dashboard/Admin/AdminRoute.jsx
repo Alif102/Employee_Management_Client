@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom"
+import {  NavLink } from "react-router-dom"
 
 const AdminRoute = () => {
   return (
     <div>
-        <Link to='/employee-list'>
+        <NavLink to='/dashboard/all-hr-employee-list'>
         <button className="btn btn-neutral m-20"> All Employee & HR List</button>
 
-        </Link>
+        </NavLink>
     </div>
   )
 }

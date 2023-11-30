@@ -34,8 +34,8 @@ const Work = () => {
             ))
         }
     </div>: 
-    <div className="flex itc justify-center mt-8">
-        <Heading center={true} title='No room Available in This category' 
+    <div className="flex items-center  justify-center mt-8">
+        <Heading center={true} title='No project Available in This category' 
         subtitle='Please Select Another Category'></Heading>
     </div>
     }

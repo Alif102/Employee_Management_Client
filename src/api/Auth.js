@@ -9,15 +9,13 @@ export const saveUser = async (user) => {
       role: 'employee',
       isVerified: 'false',
     }
-    const { data } = await axios.put(`http://localhost:5000/users/${user?.email}`, currentUser)
+    const { data } = await axios.put(`https://employeeserver.vercel.app/users/${user?.email}`, currentUser)
 
-    //  const { data } = await axiosSecure.put(`/users/${user?.email}`, currentUser)
-      //  const {data} = await axios.put(`http://localhost:5000/users/${user?.email}`,currentUser)
-    return data
+     return data
   }
 
   export const getRole = async email => {
-    const {data} = await axios.get(`http://localhost:5000/user/${email}`)
+    const {data} = await axios.get(`https://employeeserver.vercel.app/user/${email}`)
     return data.role
     // console.log(data)
   }

@@ -34,7 +34,7 @@ const Register = () => {
 const UserData = {name, email, password, designation,salary, isVerified,role, bank,photo}
 console.log(UserData)
 
-    fetch('http://localhost:5000/users', {
+    fetch('https://employeeserver.vercel.app/users', {
       method: 'POST',
       headers:{
         'content-type': 'application/json'
@@ -126,6 +126,8 @@ console.log(UserData)
             <option defaultValue="employee" disabled>Select your role</option>
             <option value="employee">employee</option>
             <option value="hr">hr</option>
+            <option value="admin">admin</option>
+
 
         </select>
           </div> 
@@ -196,10 +198,17 @@ console.log(UserData)
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="text" placeholder="password" name="password" className="input input-bordered" />
+          <input type="password" placeholder="password" name="password" className="input input-bordered" />
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
+        </div>
+        <div className="form-control">
+
+          <label className="label">
+            <span className="label-text">Details about yourself :</span>
+          </label>
+          <input type="text" placeholder="Write Few Words..." name="designation" className="input input-bordered" />
         </div>
         <div className="form-control mt-6">
           <button className="btn btn-primary">Register</button>

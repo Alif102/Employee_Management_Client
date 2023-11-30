@@ -5,7 +5,7 @@ const EmployeeUser = () => {
   
   const [employees, setEmployees] = useState([]);
     useEffect(()=> { 
-        fetch('http://localhost:5000/users/employee')
+        fetch('https://employeeserver.vercel.app/users/employee')
         .then((res)=> res.json())
         .then((data)=> setEmployees(data))
         .catch(error => console.error(error))
