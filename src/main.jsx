@@ -12,6 +12,7 @@ import Login from './Components/Login/Login.jsx'
 import ContactUs from './Components/ContactUs.jsx'
 import Dashboard from './Dashboard/Dashboard.jsx'
 import Worksheet from './Dashboard/EmployeeRoute/Worksheet.jsx'
+import PrivateRoute from './PrivateRoute/PrivateRoute.jsx'
 
 
 
@@ -39,29 +40,49 @@ const router = createBrowserRouter([
         path: '/contact-us',
         element: <ContactUs/>
       },
+      {
+        path: '/dashboard',
+        element: <PrivateRoute>
+          <Dashboard/>
+        </PrivateRoute>,
+      },
+      {
+        
+          path: 'dashboard/employee-list',
+          element: <PrivateRoute>
+            <EmployeeUser/>
+          </PrivateRoute>
+         
+      },
+      {
+                  path: 'dashboard/my-wroksheet',
+                  element:<PrivateRoute>
+                     <Worksheet/>
+                  </PrivateRoute>
+                 }
       
     ]
  },
- {
+//  {
   
-    path: '/dashboard',
-    element: <Dashboard/>,
-    children: [
+//     path: '/dashboard',
+//     element: <Dashboard/>,
+//     children: [
       
-        {
-          path: '/dashboard/employee-list',
-          element: <EmployeeUser/>
-         },
-         {
-          path: '/dashboard/my-wroksheet',
-          element: <Worksheet/>
-         },
+//         {
+//           path: '/employee-list',
+//           element: <EmployeeUser/>
+//          },
+//          {
+//           path: '/my-wroksheet',
+//           element: <Worksheet/>
+//          },
 
       
-    ]
+//     ]
   
 
- }
+//  }
  
  ])
 

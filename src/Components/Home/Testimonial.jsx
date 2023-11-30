@@ -25,7 +25,7 @@ const Testimonial = () => {
     <div className=' max-w-[1150px] mx-auto'>
       
 <h1 className="text-4xl text-[#151875] font-bold my-10 text-center">Our Testimonials</h1>
-<h1>TESTIMONIALS <br/>
+<h1 className="text-center robotoMono m-6">TESTIMONIALS <br/>
 THAT MAKE US SMILE.</h1>
 <div className="grid lg:grid-cols-3 grid-cols-1 mx-auto gap-5 justify-center  ">
 

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import EmployeTable from "./EmployeTable";
 
 const EmployeeUser = () => {
+  
   const [employees, setEmployees] = useState([]);
     useEffect(()=> { 
         fetch('http://localhost:5000/users/employee')

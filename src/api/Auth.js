@@ -15,3 +15,9 @@ export const saveUser = async (user) => {
       //  const {data} = await axios.put(`http://localhost:5000/users/${user?.email}`,currentUser)
     return data
   }
+
+  export const getRole = async email => {
+    const {data} = await axios.get(`http://localhost:5000/user/${email}`)
+    return data.role
+    // console.log(data)
+  }

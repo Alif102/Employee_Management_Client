@@ -1,21 +1,32 @@
-import { Link } from "react-router-dom"
+import useRole from "../Hooks/useRole"
+import HRpower from "./HRRoute/HRpower";
+import EmployeePower from "./EmployeeRoute/EmployeePower";
 
 const Dashboard = () => {
+  const [role] = useRole();
+  console.log( 'role',role)
   return (
     <div>
-      <div>
-        <Link to='/dashboard/employee-list'>
+     {/* <div>
+        <NavLink to='/dashboard/employee-list'>
         <button className="btn btn-neutral m-20">Employee List</button>
 
-        </Link>
-    </div>
+        </NavLink>
+    </div> */}
+    {
+      role === "hr" &&  <HRpower/>
+       }
+       {      role === "employee" &&  <EmployeePower/>
+}
 
-    <div>
-        <Link to='/dashboard/my-wroksheet'>
+    {/* <div>
+        <NavLink to='/dashboard/my-wroksheet'>
         <button className="btn btn-neutral m-20">My Worksheet</button>
 
-        </Link>
-    </div>
+        </NavLink>
+    </div>  */}
+
+
     </div>
   )
 }
