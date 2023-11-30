@@ -1,27 +1,21 @@
 /* eslint-disable react/prop-types */
 
-import { useState } from "react";
-import ToggleBtn from "../Shared/ToggleBtn";
 
 const EmployeTable = ({employees}) => {
-  const [toggle, setToggle] = useState(false)
-  console.log(toggle)
-  // const [isActive, setActive] = useState(false)
 
   //   For verified/not verified menu item toggle button
-  const toggleHandler = event => {
-    setToggle(event.target.checked)
-  }
-  
-    // const {name, email, designation,salary, bank,photo}= employee
-    console.log(employees)
-    const [isToggleOn, setToggleOn] = useState("❌");
-
-    // Function to toggle the state
+  // const toggleHandler = event => {
+  //   setToggle(event.target.checked)
+  // }
+   // Function to toggle the state
    
-    const handleToggleStatus = () => {
-      setToggleOn(!isToggleOn);
-    };
+  //  const handleToggleStatus = () => {
+  //   setToggleOn(!isToggleOn);
+  // };
+  
+    // const [isToggleOn, setToggleOn] = useState("❌");
+
+   
   
   return (
     <div>
@@ -79,15 +73,17 @@ const EmployeTable = ({employees}) => {
   <button className="btn btn-ghost btn-xs">details</button>
 </th>
 <td>
-                
-                <p> <button onClick={handleToggleStatus}>{isToggleOn ? 'Not Verified ❌' : 'Verified ✅'}  </button> </p>
+                {
+                  employee.isVerified === 'false' ? 'Not Verified ❌' : 'Verified ✅'
+                }
+                {/* <p> <button onClick={handleToggleStatus}>{isToggleOn ? 'Not Verified ❌' : 'Verified ✅'}  </button> </p> */}
 
                 
              
             </td>
-            <td>
+            {/* <td>
             <ToggleBtn toggleHandler={toggleHandler} />
-            </td>
+            </td> */}
 </tr>
 
         ))

@@ -1,15 +1,17 @@
-import { TbBeach, TbMountain } from 'react-icons/tb'
+import {  TbMountain } from 'react-icons/tb'
 import {
  
   GiWindmill,
 } from 'react-icons/gi'
+import { TbBrandWebflow } from "react-icons/tb";
+import { SiElementor } from "react-icons/si";
 
-import { MdOutlineVilla } from 'react-icons/md'
+
 
 export const categories = [
   {
     label: 'Elementor',
-    icon: TbBeach,
+    icon: SiElementor,
     description: 'This property is close to the beach!',
   },
   {
@@ -19,7 +21,7 @@ export const categories = [
   },
   {
     label: 'Webflow',
-    icon: MdOutlineVilla,
+    icon: TbBrandWebflow,
     description: 'This property is modern!',
   },
   {

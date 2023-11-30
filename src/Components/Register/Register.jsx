@@ -19,7 +19,8 @@ const Register = () => {
     const form = new FormData(e.currentTarget)
     const name = (form.get('name'));
     const role = (form.get('role'));
-
+    const isVerified = 'false';
+  //  const role = 'employee';
     const email = (form.get('email'));
     const designation = (form.get('designation'));
     const salary = (form.get('salary'));
@@ -30,18 +31,16 @@ const Register = () => {
     const image = Imageform.image.files[0]
     const imageData = await imageUpload(image); 
     const photo = imageData?.data?.display_url
-const UserData = {role,name, email, password, designation,salary, bank,photo}
+const UserData = {name, email, password, designation,salary, isVerified,role, bank,photo}
 console.log(UserData)
-const VerifiedUser ={
-  isVerified : "hello"
-}
+
     fetch('http://localhost:5000/users', {
       method: 'POST',
       headers:{
         'content-type': 'application/json'
       }, 
       body : 
-        JSON.stringify(UserData, VerifiedUser )
+        JSON.stringify(UserData )
       
     })
 
@@ -74,7 +73,7 @@ const VerifiedUser ={
 
     
 
-     await createUser(email,password)
+    await createUser(email,password)
 
     
 
@@ -113,12 +112,25 @@ const VerifiedUser ={
       }
       <form onSubmit={handleRegister}
        className="card-body md:w-3/4 lg:w-1/2 mx-auto ">
-<div className="form-control">
+{/* <div className="form-control">
           <label className="label">
             <span className="label-text">Your Role :</span>
           </label>
           <input type="text" placeholder="Your Role" name="role" className="input input-bordered" />
-        </div>
+        </div> */}
+ <div className="form-control">
+ <label className="label">
+            <span className="label-text">Your Role :</span>
+          </label>
+        <select className="input input-bordered" id="role" name="role" required>
+            <option defaultValue="employee" disabled>Select your role</option>
+            <option value="employee">employee</option>
+            <option value="hr">hr</option>
+
+        </select>
+          </div> 
+
+
 <div className="form-control">
           <label className="label">
             <span className="label-text">Name</span>

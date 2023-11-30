@@ -4,10 +4,10 @@ import { Link, NavLink } from "react-router-dom"
 import { useEffect, useState } from "react";
 import {BsSun} from 'react-icons/bs'
 import {HiOutlineMoon} from 'react-icons/hi'
-import UseAuth from "../../Hooks/UseAuth";
+import UseAuth from "../../Hooks/UseAuth"; 
  
  
-const Navbar = () => {
+const Navbar = () => { 
 
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
@@ -43,7 +43,7 @@ const Navbar = () => {
 
     <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
     <li><NavLink to="/contact-us">Contact Us</NavLink></li> 
-
+ 
     </>
   return (
     <div data-theme="dark">
@@ -60,7 +60,7 @@ const Navbar = () => {
       </ul>
     </div>
     {/* <a className="btn btn-ghost normal-case text-xl">Moscow Mashuka</a> */}
-    <img className="w-[130px] ml-7" src="https://hotelina-nextjs.vercel.app/assets/images/header-logo2.svg" alt="Logo" />
+    <img className="w-[130px] ml-7" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Workday_Logo.png/1200px-Workday_Logo.png" alt="Logo" />
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

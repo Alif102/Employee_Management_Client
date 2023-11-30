@@ -6,6 +6,7 @@ const Cards = ({room}) => {
   <figure><img className='group-hover:scale-110 transition' src={room.image} alt="Shoes" /></figure>
   <h2>{room.category}</h2>
   <h1>{room.title}</h1>
+  <button>Watch Live</button>
 </div>
   )
 }
