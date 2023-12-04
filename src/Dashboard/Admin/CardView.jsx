@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import AllUsersTable from "./AllUsersTable";
 import axios from 'axios'
 import toast from "react-hot-toast";
+import CardViewCard from "./CardViewCard";
 
-const AllUsers = () => {
+const CardView = () => {
     const [toggle,setToggle] = useState(true);
 
     const [employees, setEmployees] = useState([]);
@@ -27,7 +27,7 @@ const AllUsers = () => {
   return (
     <div>
       
-        <AllUsersTable employees={employees}
+        <CardViewCard employees={employees}
         RemoveEmployee={RemoveEmployee} 
         toggle = {toggle}
         setToggle={setToggle}
@@ -38,4 +38,4 @@ const AllUsers = () => {
   )
 }
 
-export default AllUsers
+export default CardView

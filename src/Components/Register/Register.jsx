@@ -19,7 +19,7 @@ const Register = () => {
     const form = new FormData(e.currentTarget)
     const name = (form.get('name'));
     const role = (form.get('role'));
-    const isVerified = 'false';
+    const isVerified = 'true';
   //  const role = 'employee';
     const email = (form.get('email'));
     const designation = (form.get('designation'));
@@ -31,7 +31,7 @@ const Register = () => {
     const image = Imageform.image.files[0]
     const imageData = await imageUpload(image); 
     const photo = imageData?.data?.display_url
-const UserData = {name, email, password, designation,salary, isVerified,role, bank,photo}
+const UserData = {name, email, password, designation,salary,role,isVerified,photo, bank}
 console.log(UserData)
 
     fetch('https://employeeserver.vercel.app/users', {
@@ -79,9 +79,9 @@ console.log(UserData)
 
     // const dbresponse = await saveUser(result?.user)
     // console.log(dbresponse)
-  
+    // imageData?.data?.display_url
 
-      handleUpdateProfile(name, imageData?.data?.display_url)
+      handleUpdateProfile(name )
       .then(()=>{
         setSuccess('user created sucessfully')
         toast.success('User created successfully');
@@ -112,12 +112,7 @@ console.log(UserData)
       }
       <form onSubmit={handleRegister}
        className="card-body md:w-3/4 lg:w-1/2 mx-auto ">
-{/* <div className="form-control">
-          <label className="label">
-            <span className="label-text">Your Role :</span>
-          </label>
-          <input type="text" placeholder="Your Role" name="role" className="input input-bordered" />
-        </div> */}
+
  <div className="form-control">
  <label className="label">
             <span className="label-text">Your Role :</span>
@@ -178,7 +173,7 @@ console.log(UserData)
                 Select Image:
               </label>
               <input
-                required
+                
                 type='file'
                 id='image'
                 name='image'
@@ -203,17 +198,11 @@ console.log(UserData)
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
         </div>
-        <div className="form-control">
-
-          <label className="label">
-            <span className="label-text">Details about yourself :</span>
-          </label>
-          <input type="text" placeholder="Write Few Words..." name="designation" className="input input-bordered" />
-        </div>
+       
         <div className="form-control mt-6">
           <button className="btn btn-primary">Register</button>
         </div>
-        <p>Already have an account ? <Link to='/'> <button>Login</button></Link></p>
+        <p>Already have an account ? <Link to='/login'> <button>Login</button></Link></p>
 
         <div className="text-center">
         <SocialLogin/>

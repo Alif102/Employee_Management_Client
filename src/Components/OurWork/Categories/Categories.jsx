@@ -8,11 +8,11 @@ const Categories = () => {
     console.log(category)
      
   return (
-    <div className="mt-10 mb-3">
-      <h1 className="text-xl text-center">Our Works</h1>
-      <h1 className=" text-3xl text-center font-bold">RESULTS REVEAL THE- BEAUTY OF CREATIVITY.</h1>
+    <div className="md:mt-10 md:mb-3">
+      <h1 className="text-xl md:text-center">Our Works</h1>
+      <h1 className=" md:text-3xl md:text-center font-bold">RESULTS REVEAL THE- BEAUTY OF CREATIVITY.</h1>
       {/* <h1>CHOOSE CATEGORY:</h1> */}
-    <div className="pt-4 mb-4 justify-center flex items-center overflow-x-auto">
+    <div className="md:pt-4 md:mb-4 md:justify-center flex md:items-center overflow-x-auto">
 
         {categories.map(item => (
             <CategoryBox key={item.label} label={item.label}

@@ -1,8 +1,13 @@
+import { Helmet } from "react-helmet";
 import { FaClock, FaCreditCard, FaPhoneAlt } from "react-icons/fa";
 
 const ContactUs = () => {
     return (
         <div>
+            <Helmet>
+        <title>Contact - Employee Management</title>
+        <meta name="description" content="This is Home" />
+      </Helmet>
             <div className="text-center mt-20 mb-20 p-2">
                 <h2 className="text-3xl text-[#ff3811] font-bold">Contact Us</h2>
                 {/* <h2 className="text-5xl font-bold my-4">Our Contact US Area</h2> */}

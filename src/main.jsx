@@ -13,7 +13,9 @@ import ContactUs from './Components/ContactUs.jsx'
 import Dashboard from './Dashboard/Dashboard.jsx'
 import Worksheet from './Dashboard/EmployeeRoute/Worksheet.jsx'
 import PrivateRoute from './PrivateRoute/PrivateRoute.jsx'
-import AllUsers from './Dashboard/Admin/AllUsers.jsx'
+// import AllUsers from './Dashboard/Admin/AllUsers.jsx'
+import EmployeeDetails from './Employee/EmployeeDetails.jsx'
+import ToggleView from './Dashboard/Admin/ToggleView.jsx'
 
 
 
@@ -51,10 +53,26 @@ const router = createBrowserRouter([
         
           path: 'dashboard/employee-list',
           element: <PrivateRoute>
-            <EmployeeUser/>
-          </PrivateRoute>
+            <EmployeeUser>
+    
+            </EmployeeUser>,
+
+            
+          </PrivateRoute>,
          
       },
+      {
+  
+        path: '/detail/:_id',
+        element: <PrivateRoute>
+         <EmployeeDetails/>
+         
+        </PrivateRoute>,
+        loader: ({params})=> fetch(`https://employeeserver.vercel.app/users/employee/${params._id}`)
+        
+   },
+   
+  // http://localhost:5000 https://employeeserver.vercel.app
       {
                   path: 'dashboard/my-wroksheet',
                   element:<PrivateRoute>
@@ -64,17 +82,14 @@ const router = createBrowserRouter([
                  {
                   path: 'dashboard/all-hr-employee-list',
                   element: <PrivateRoute>
-                    <AllUsers/>
+                    <ToggleView/>
                   </PrivateRoute>
-                 }
+                 },
+                
       
+ 
     ]
- },
-//  {
-  
-//     path: '/dashboard',
-//     element: <Dashboard/>,
-//     children: [
+  }
       
 //         {
 //           path: '/employee-list',

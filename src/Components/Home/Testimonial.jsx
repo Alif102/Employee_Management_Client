@@ -4,30 +4,30 @@ const Testimonial = () => {
         id : 1,
         name:'John Smith',
         occ: 'Businesman',
-      image: "   https://assets.cdn.filesafe.space/4f6En2kmrDyqEdKKD68i/media/64fef493ec8daf3b1eca2f2c.webp      ",
-      desc: "I feel valued and appreciated as a member of the team, and I'm constantly learning and growing in my role",
+      image: "         ",
+      desc: "",
      
     },
     { id: 2,
       name:'Karley Quinn',
       occ: 'Tv Host',
-      image: "https://assets.cdn.filesafe.space/4f6En2kmrDyqEdKKD68i/media/64fef40b93d7eb057e313dc5.jpeg",
-      desc: 'Ive been with [Company Name] for several years now, and I can confidently say its the best company Ive ever worked for.'
+      image: "",
+      desc: ''
     },
     { id: 3,
       name:'Steve Williamson',
       occ: 'Player',
       image: "https://assets.cdn.filesafe.space/4f6En2kmrDyqEdKKD68i/media/64fef45993d7ebee28313df1.webp",
-      desc:'My experience was positive and unsurpassed. I am looking forward to develop my next project with the wonderful team at Flatworldsolutions.'
+      desc:''
     }
   ]
   return (
-    <div className=' max-w-[1150px] mx-auto'>
+    <div className=' max-w-[1100px] mx-auto mt-10 mb-10'>
       
-<h1 className="text-4xl text-[#151875] font-bold my-10 text-center">Our Testimonials</h1>
+<h1 className="text-3xl text-[#151875] font-bold mt-10 text-center">Our Testimonials</h1>
 <h1 className="text-center robotoMono m-6">TESTIMONIALS <br/>
 THAT MAKE US SMILE.</h1>
-<div className="grid lg:grid-cols-3 grid-cols-1 mx-auto gap-5 justify-center  ">
+<div className="grid lg:grid-cols-3 max-w-[1100px] grid-cols-1 mx-auto gap-5 justify-center  ">
 
 
 {
